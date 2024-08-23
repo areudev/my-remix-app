@@ -1,4 +1,8 @@
-import { OTPInput, OTPInputContext } from 'input-otp'
+import {
+	OTPInput,
+	OTPInputContext,
+	REGEXP_ONLY_DIGITS_AND_CHARS,
+} from 'input-otp'
 import * as React from 'react'
 
 import { cn } from '#app/utils/misc.tsx'
@@ -14,6 +18,7 @@ const InputOTP = React.forwardRef<
 			containerClassName,
 		)}
 		className={cn('disabled:cursor-not-allowed', className)}
+		pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
 		{...props}
 	/>
 ))
